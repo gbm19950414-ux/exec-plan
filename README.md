@@ -11,7 +11,7 @@
 ```sh
 git clone https://github.com/gbm19950414-ux/exec-plan.git
 cd exec-plan
-git checkout v0.1.0-rc.1
+git checkout v0.1.0-rc.2
 sh scripts/install-skill.sh install
 sh scripts/install-skill.sh status
 python3 -m unittest discover -s skills/exec-plan/scripts -p 'test_*.py'
