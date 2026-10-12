@@ -29,8 +29,8 @@ case "$action" in
       printf 'This release supports Apple Silicon macOS (arm64).\n' >&2
       exit 1
     fi
-    command -v python3 >/dev/null 2>&1 || { printf 'Install Python 3.11 or newer.\n' >&2; exit 1; }
-    python3 -c 'import sys; raise SystemExit(sys.version_info < (3, 11))' || { printf 'Install Python 3.11 or newer.\n' >&2; exit 1; }
+    command -v python3 >/dev/null 2>&1 || { printf 'Install Python 3.11 or newer: brew install python\nThen check: python3 --version\n' >&2; exit 1; }
+    python3 -c 'import sys; raise SystemExit(sys.version_info < (3, 11))' || { printf 'Make Python 3.11 or newer the active python3: brew install python\nThen check: python3 --version\n' >&2; exit 1; }
 
     if [ -L "$link" ] && [ "$(readlink "$link")" = "$source_dir" ]; then
       printf 'Already installed: %s\n' "$link"

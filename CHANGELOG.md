@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.1.0-rc.2 — clearer installation preflight
+
+- Show a concrete Homebrew command when Python 3.11+ is missing or an older `python3` is active.
+
 ## 0.1.0-rc.1 — first shareable release candidate
 
 - Package the complete ExecPlan skill, template, references, progress publisher, tests and fictional example.
