@@ -1,0 +1,7 @@
+{
+  "expenses": [
+    {"id": "paper", "amount": 5},
+    {"id": "ink", "amount": 12}
+  ],
+  "claimed_total": 17
+}

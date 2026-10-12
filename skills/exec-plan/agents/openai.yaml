@@ -1,0 +1,7 @@
+interface:
+  display_name: "Exec Plan（执行计划）"
+  short_description: "为复杂任务创建、审查、维护和执行自包含的长期执行计划"
+  default_prompt: "使用 $exec-plan 为这项复杂工作编写一份自包含、可执行的 ExecPlan。"
+
+policy:
+  allow_implicit_invocation: true
