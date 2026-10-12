@@ -1,0 +1,24 @@
+name: Verify ExecPlan
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+permissions:
+  contents: read
+jobs:
+  macos-arm64:
+    runs-on: macos-15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Test progress contract
+        run: python3 -m unittest discover -s skills/exec-plan/scripts -p 'test_*.py'
+      - name: Check fictional example and progress
+        run: |
+          python3 examples/fictional-project/check.py
+          python3 skills/exec-plan/scripts/execplan_progress.py check examples/fictional-plan.md
+      - name: Test skill installation
+        run: sh scripts/test-install-skill.sh
